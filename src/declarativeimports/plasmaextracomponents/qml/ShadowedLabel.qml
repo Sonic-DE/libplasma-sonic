@@ -9,7 +9,7 @@
  */
 
 import QtQuick
-import Qt5Compat.GraphicalEffects
+import QtQuick.Effects
 
 import org.kde.plasma.components as PlasmaComponents3
 import org.kde.kirigami as Kirigami
@@ -48,14 +48,14 @@ PlasmaComponents3.Label {
     color: "white"
 
     layer.enabled: renderShadow && GraphicsInfo.api !== GraphicsInfo.Software
-    layer.effect: DropShadow {
-        horizontalOffset: 1
-        verticalOffset: 1
-
-        radius: 4.0
-        samples: radius * 2 + 1
-        spread: 0.35
-        color: "black"
+    layer.effect: MultiEffect {
+        shadowEnabled: true
+        shadowHorizontalOffset: 1
+        shadowVerticalOffset: 1
+        shadowBlur: 1
+        blurMax: 4
+        shadowScale: 1
+        shadowColor: "black"
     }
 
     // Fallback background when we can't draw the text shadow because hardware

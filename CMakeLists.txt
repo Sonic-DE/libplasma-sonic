@@ -108,8 +108,6 @@ else()
     message(STATUS "OpenGL::EGL is not available")
 endif()
 
-ecm_find_qmlmodule(Qt5Compat.GraphicalEffects REQUIRED)
-
 ecm_find_qmlmodule(org.kde.config REQUIRED)
 ecm_find_qmlmodule(org.kde.kirigami REQUIRED)
 ecm_find_qmlmodule(org.kde.ksvg REQUIRED)
